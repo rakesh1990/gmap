@@ -21,8 +21,11 @@
         <script type="text/javascript">
 		
         var mobileDemo = { 'center': '57.7973333,12.0502107', 'zoom': 10 };
-		
+		var flag = false;
+				
 		$('#directions_map').live('pageinit', function() {
+		
+			
 				demo.add('directions_map', function() {
 	    $('#map_canvas_1').gmap({'center': mobileDemo.center, 'zoom': mobileDemo.zoom, 'disableDefaultUI':true, 'callback': function() {
 						var self = this;
@@ -37,6 +40,7 @@
 											$('#from').val(results[0].formatted_address);
 										}
 									});
+									
 								} else {
 									alert('Unable to get current position');
 								}
@@ -59,31 +63,34 @@
 					
         </script>
      <!--   --------------------------------------------------------------------------------------------------->
+     
+    
 </head> 
 <body> 
 
-<div data-role="page" id="home">
-	<div data-role="header" data-position="fixed" data-id="header1">
+<div data-role="page" id="home" data-theme="b">
+	<div  data-id="header1" data-position="fixed" data-role="header" data-theme="b">
 		<h1>EASY MAP!!</h1>
 	</div>
 	<div data-role="content">	
 		<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="a"> 
 					
 					
-					<li><a href="#directions_map">Search places</a></li> 
+					<li><a data-ajax="true" href="#directions_map">Get Direction</a></li> 
 					
 				</ul>	
 	</div>
-	<div data-role="footer" data-position="fixed" data-id="foot1">
-		<h4>@copyright</h4>
+	<div data-role="footer" data-position="fixed" data-id="foot1" data-theme="b">
+		<h4>easy map &copy; copyright 2013</h4>
 	</div>
 </div>
 <!--		------------------------------------------------------------------------------------------>
 
 
 <div id="directions_map" data-role="page">
-			<div data-role="header" data-position="fixed" data-id="header1">
-            	<a data-rel="back" href="#home">Back</a>
+			<div data-role="header" data-position="fixed" data-id="header1" data-theme="b">
+            	<a href="#home" data-role="button" data-icon="back" data-iconpos="left">Back</a>
+                
 				<h1>EASY MAP!! </h1> 
 				
 				
@@ -108,8 +115,8 @@
 				</div>
 			</div>
             
-            <div data-role="footer" data-position="fixed" data-id="foot1">
-		<h4>@copyright</h4>
+            <div data-role="footer" data-position="fixed" data-id="foot1" data-theme="b">
+		<h4>easy map &copy; copyright 2013</h4>
 	</div>
 		</div>
 
